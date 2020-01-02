@@ -77,6 +77,9 @@ function translateDockerTag() {
   else
     TAG="${BRANCH}"
   fi;
+  
+  TAG=$(echo "$TAG" | tr -cd '[:alnum:]._-')
+  
 }
 
 function hasCustomTag() {
